@@ -1,8 +1,7 @@
 Python rectangles
 =================
 
-Generic rectangles in screen coordinates. Functions to test relations
-between rectangles are supported like overlap, distance, etc.
+Generic rectangles in screen coordinates. Various methods are given to find if rectangles overlap, the distance between them, etc.
 
 * A rectangle is made out of four points.
 * Iterating over a rectangle iterates over its corner points.
@@ -30,7 +29,7 @@ is_point_inside_rect()
     
 Takes: a Point instance
 Gives: True or False
-    
+         
 ------------------------------------------------------------------------
 
 overlaps_with()
@@ -42,7 +41,7 @@ overlaps_with()
 
 Takes: a Rect instance
 Gives: True or False
-
+         
 ------------------------------------------------------------------------
 
 overlaps_on_x_axis_with()
@@ -56,7 +55,7 @@ overlaps_on_x_axis_with()
 
 Takes: a Rect instance
 Gives: True or False
-
+         
 ------------------------------------------------------------------------
 
 overlaps_on_y_axis_with()
@@ -68,7 +67,7 @@ overlaps_on_y_axis_with()
 
 Takes: a Rect instance
 Gives: True or False
-
+         
 ------------------------------------------------------------------------
 
 distance_to_rect()
