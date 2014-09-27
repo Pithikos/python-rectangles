@@ -87,6 +87,8 @@ distance_to_rect()
 Rect
 =================
 
+A rectangle is the primary shape of this module. A rectangle is made out of four points (class Point is explained below). Iterating over a rectangle results into an iteration over its corners which essentially are points.
+
 | Property 	| Description         	| Type  	|
 |----------	|---------------------	|-------	|
 | l_top    	| Left top corner     	| Point 	|
@@ -112,6 +114,9 @@ Rect
 
 Point
 =================
+
+Since rectangle is made out of four points it's reasonable that you will want to know a bit about the class Point.
+Also keep in mind that some methods of a rectangle take points as an argument.
 
 | Property 	| Description           	| Type  	|
 |----------	|-----------------------	|-------	|
