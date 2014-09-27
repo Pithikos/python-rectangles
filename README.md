@@ -21,7 +21,8 @@ Example
 Rectangle methods
 =================
 
-is_point_inside_rect()
+point=Point(40, 40)
+rect1.is_point_inside_rect(point)
 
      ______
     |    . |
