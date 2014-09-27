@@ -73,15 +73,10 @@ class Rect():
 
 
 	def __iter__(self):
-		for i in range(4):         # 1--2
-			if   i==0:             # |  |
-				yield self.l_top   # 4--3
-			elif i==1:
-				yield self.r_top
-			elif i==2:
-				yield self.r_bot
-			elif i==3:
-				yield self.l_bot
+		yield self.l_top
+		yield self.r_top
+		yield self.r_bot
+		yield self.l_bot
 
 
 	# Gives back a copy of this rectangle
