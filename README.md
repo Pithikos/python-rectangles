@@ -27,8 +27,8 @@ is_point_inside_rect()
     |    . |
     |______|
     
-Takes: a Point instance
-Gives: True or False
+* Takes: a `Point` instance
+* Gives: `True` or `False`
          
 ------------------------------------------------------------------------
 
