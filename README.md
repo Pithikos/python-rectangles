@@ -18,7 +18,7 @@ Example
 
 
 
-Rectangle methods
+Rect methods
 =================
 
 is_point_inside_rect()
@@ -83,3 +83,25 @@ distance_to_rect()
 * Takes: a `Rect` instance
 * Gives: distance in float
               
+
+Rect properties
+=================
+
+| Property 	| Description         	| Type  	|
+|----------	|---------------------	|-------	|
+| l_top    	| Left top corner     	| Point 	|
+| r_top    	| Right top corner    	| Point 	|
+| l_bot    	| Left bottom corner  	| Point 	|
+| r_bot    	| Right bottom corner 	| Point 	|
+| center   	| Center of rectangle 	| Point 	|
+| width    	| Width of rectangle  	| Float 	|
+| height   	| Height of rectangle  	| Float 	|
+
+
+Point properties
+=================
+
+| Property 	| Description           	| Type  	|
+|----------	|-----------------------	|-------	|
+| x        	| Coordinates on x axis 	| Float 	|
+| y        	| Right top corner      	| Point 	|
