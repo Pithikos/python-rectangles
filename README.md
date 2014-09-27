@@ -18,7 +18,7 @@ Example
 
 
 
-Rect methods
+Interface
 =================
 
 is_point_inside_rect()
@@ -97,6 +97,21 @@ Rect properties
 | width    	| Width of rectangle  	| Float 	|
 | height   	| Height of rectangle  	| Float 	|
 
+Rect methods
+=================
+
+| Method                    	| Description                                                                                               	| Takes        	| Gives         	|
+|---------------------------	|-----------------------------------------------------------------------------------------------------------	|--------------	|---------------	|
+| copy()                    	| Gives a new copy of a rectangle                                                                           	| None         	| Rect          	|
+| corners_belong_to_edge()  	| Tells if two points are the corners on the edge of the rectangle                                          	| Point, Point 	| True or False 	|
+| is_point_inside_rect()    	| Tells if a point is inside the rectangle                                                                  	| Point        	| True or False 	|
+| overlaps_with()           	| Tells if the rectangle overlaps with an other rectangle                                                   	| Rect         	| True or False 	|
+| align_with_top_edge_of()  	| Moves rectangle to the top edge of given rectangle                                                        	| Rect         	| self          	|
+| align_with_left_edge_of() 	| Moves rectangle to the left edge of given rectangle                                                       	| Rect         	| self          	|
+| overlaps_on_x_axis_with() 	| Tells if the rectangle overlaps with an other rectangle if they were both moved to the top of the screen  	| Rect         	| True or False 	|
+| overlaps_on_y_axis_with() 	| Tells if the rectangle overlaps with an other rectangle if they were both moved to the left of the screen 	| Rect         	| True or False 	|
+| distance_to_rect()        	| Gives the shortest distance between two rectangles                                                        	| Rect         	| Float         	|
+
 
 Point properties
 =================
@@ -104,4 +119,12 @@ Point properties
 | Property 	| Description           	| Type  	|
 |----------	|-----------------------	|-------	|
 | x        	| Coordinates on x axis 	| Float 	|
-| y        	| Right top corner      	| Point 	|
+| y        	| Coordinates on y axis 	| Point 	|
+
+Rect methods
+=================
+
+| Method                    	| Description                                                                                               	| Takes          	| Gives         	|
+|---------------------------	|-----------------------------------------------------------------------------------------------------------	|----------------	|---------------	|
+| distance_to_point()       	| Gives the distance to a point                                                                             	| Point          	| Float         	|
+| faces_line()              	| Tells if point is facing a line (a tupple of two points)                                                  	| (Point, Point) 	| True or False 	|
