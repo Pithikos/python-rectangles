@@ -39,8 +39,8 @@ overlaps_with()
     |____|      |
          |______|
 
-Takes: a Rect instance
-Gives: True or False
+* Takes: a `Rect` instance
+* Gives: `True` or `False`
          
 ------------------------------------------------------------------------
 
@@ -53,8 +53,8 @@ overlaps_on_x_axis_with()
        |      |        the sreen.
        |______|
 
-Takes: a Rect instance
-Gives: True or False
+* Takes: a `Rect` instance
+* Gives: `True` or `False`
          
 ------------------------------------------------------------------------
 
@@ -65,14 +65,14 @@ overlaps_on_y_axis_with()
     |______|  |      | if they were to be smashed to the left 
               |______| of the screen.
 
-Takes: a Rect instance
-Gives: True or False
+* Takes: a `Rect` instance
+* Gives: `True` or `False`
          
 ------------------------------------------------------------------------
 
 distance_to_rect()
 
-	 ______
+     ______
     |      |             Finds the shortest distance between
     |______|             two rectangles. Both edges and corners
             \            are being taken into concideration.
@@ -80,6 +80,6 @@ distance_to_rect()
               |      |
               |______|
 
-Takes: a Rect instance	
-Gives: distance in float
+* Takes: a `Rect` instance
+* Gives: distance in float
               
