@@ -84,7 +84,7 @@ distance_to_rect()
 * Gives: distance in float
               
 
-Rect properties
+Rect
 =================
 
 | Property 	| Description         	| Type  	|
@@ -96,9 +96,6 @@ Rect properties
 | center   	| Center of rectangle 	| Point 	|
 | width    	| Width of rectangle  	| Float 	|
 | height   	| Height of rectangle  	| Float 	|
-
-Rect methods
-=================
 
 | Method                    	| Description                                                                                               	| Takes        	| Gives         	|
 |---------------------------	|-----------------------------------------------------------------------------------------------------------	|--------------	|---------------	|
@@ -113,7 +110,7 @@ Rect methods
 | distance_to_rect()        	| Gives the shortest distance between two rectangles                                                        	| Rect         	| Float         	|
 
 
-Point properties
+Point
 =================
 
 | Property 	| Description           	| Type  	|
@@ -121,8 +118,6 @@ Point properties
 | x        	| Coordinates on x axis 	| Float 	|
 | y        	| Coordinates on y axis 	| Point 	|
 
-Rect methods
-=================
 
 | Method                    	| Description                                                                                               	| Takes          	| Gives         	|
 |---------------------------	|-----------------------------------------------------------------------------------------------------------	|----------------	|---------------	|
