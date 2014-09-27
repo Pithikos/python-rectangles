@@ -21,13 +21,11 @@ Example
 Rectangle methods
 =================
 
+is_point_inside_rect()
+
      ______
     |    . |
     |______|
-    
-
-    point=Point(40, 40)
-    rect1.is_point_inside_rect(point)
     
 Takes: a Point instance
 Gives: True or False
