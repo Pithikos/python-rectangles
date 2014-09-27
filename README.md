@@ -21,12 +21,13 @@ Example
 Rectangle methods
 =================
 
-point=Point(40, 40)
-rect1.is_point_inside_rect(point)
-
      ______
     |    . |
     |______|
+    
+
+    point=Point(40, 40)
+    rect1.is_point_inside_rect(point)
     
 Takes: a Point instance
 Gives: True or False
