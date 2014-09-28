@@ -143,7 +143,7 @@ class Rect():
     #   |      |
     #   |______|
 	def overlaps_on_x_axis_with(self, rect):
-		return rect.copy().align_with_top_edge_of().overlaps_with()
+		return self.copy().align_with_top_edge_of(rect).overlaps_with(rect)
 
 
     # ______
@@ -151,7 +151,7 @@ class Rect():
     #|______|  |      |
     #          |______|
 	def overlaps_on_y_axis_with(self, rect):
-		return rect.copy().align_with_left_edge_of().overlaps_with()
+		return self.copy().align_with_left_edge_of(rect).overlaps_with(rect)
 
 
 	# ______
