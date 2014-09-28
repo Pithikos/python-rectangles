@@ -102,7 +102,7 @@ class Rect():
     #|______|
 	def is_point_inside_rect(self, point):
 		return (self.l_top.x <= point.x <= self.r_top.x and
-			self.l_bot.y >= point.y >= self.l_top.y)
+			self.l_top.y <= point.y <= self.l_bot.y)
 
 
     #  ______
@@ -122,7 +122,7 @@ class Rect():
     #      |______|
 	def align_with_top_edge_of(self, rect):
 		self.l_top.y = self.r_top.y = rect.r_top.y
-		self.l_bot.y = self.r_bot.y = self.l_top.y + self.height
+		self.l_bot.y = self.r_bot.y = self.l_top.y+self.height
 		return self
 
 
@@ -132,7 +132,7 @@ class Rect():
     #      |______|         |______|
 	def align_with_left_edge_of(self, rect):
 		self.l_top.x = self.l_bot.x = rect.l_top.x
-		self.r_top.x = self.r_bot.x = self.l_top.x + self.width
+		self.r_top.x = self.r_bot.x = self.l_top.x+self.width
 		return self
 
 
@@ -143,7 +143,7 @@ class Rect():
     #   |      |
     #   |______|
 	def overlaps_on_x_axis_with(self, rect):
-		return rect.copy().align_with_top_edge_of(self).overlaps_with(self)
+		return rect.copy().align_with_top_edge_of().overlaps_with()
 
 
     # ______
@@ -151,7 +151,7 @@ class Rect():
     #|______|  |      |
     #          |______|
 	def overlaps_on_y_axis_with(self, rect):
-		return rect.copy().align_with_left_edge_of(self).overlaps_with(self)
+		return rect.copy().align_with_left_edge_of().overlaps_with()
 
 
 	# ______
@@ -190,7 +190,6 @@ class Rect():
 		edge2=(p1, p2)
 
 		# 4. find shortest distance between these two edges
-		min_dist="INF"
 		distances=[
 			distance_between_edge_and_point(edge1, edge2[0]),
 			distance_between_edge_and_point(edge1, edge2[1]),
