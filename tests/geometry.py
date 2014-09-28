@@ -15,6 +15,26 @@ assert p1==p2
 assert p1!=p3
 assert p2!=p3
 
+# --- Point in rect ---
+r=Rect(0, 0, 1, 1)
+assert r.is_point_inside_rect(Point(1, 0))
+assert r.is_point_inside_rect(Point(1, 1))
+assert not r.is_point_inside_rect(Point(-1, -1))
+assert not r.is_point_inside_rect(Point(-1, 0))
+assert not r.is_point_inside_rect(Point(-1, 1))
+assert not r.is_point_inside_rect(Point(0, -1))
+assert     r.is_point_inside_rect(Point(0, 0))
+assert     r.is_point_inside_rect(Point(0, 1))
+assert not r.is_point_inside_rect(Point(1, -1))
+assert     r.is_point_inside_rect(Point(1, 0))
+assert     r.is_point_inside_rect(Point(1, 1))
+assert not r.is_point_inside_rect(Point(2, -1))
+assert not r.is_point_inside_rect(Point(2, 0))
+assert not r.is_point_inside_rect(Point(2, 1))
+assert not r.is_point_inside_rect(Point(-1, -1))
+assert not r.is_point_inside_rect(Point(-1, 0))
+assert     r.is_point_inside_rect(Point(0.5, 0.5))
+
 # --- Distance ---
 assert Point(0, 0).distance_to_point(Point(0, 1))==1
 assert Point(0, 0).distance_to_point(Point(1, 0))==1
