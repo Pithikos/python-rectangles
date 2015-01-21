@@ -102,20 +102,14 @@ A rectangle is the primary shape of this module. A rectangle is made out of four
 | Method                    | Description                      | Takes         | Gives             |
 |---------------------------|----------------------------------|---------------|-------------------|
 | copy()                    | Gives a new copy of a rectangle  | None          | [Rect][r]         |
-| corners_belong_to_edge()  | Tells if two points are the corners on the 
-                              edge of the rectangle            | [Point][p], [Point][p] | True or False |
-| is_point_inside_rect()    | Tells if a point is inside the rectangle          | [Point][p] | True or False |
-| overlaps_with()           | Tells if the rectangle overlaps with an other
-                              rectangle                                          | [Rect][r] | True or False |
-| align_with_top_edge_of()  | Moves rectangle to the top edge of given rectangle | [Rect][r] | self         |
-| align_with_left_edge_of() | Moves rectangle to the left edge of given rectangle | [Rect][r] | self         |
-| overlaps_on_x_axis_with() | Tells if the rectangle overlaps with an
-                              other rectangle if they were both moved to
-                              the top of the screen  	                         | [Rect][r] | True or False |
-| overlaps_on_y_axis_with() | Tells if the rectangle overlaps with 
-                              an other rectangle if they were both moved
-                              to the left of the screen                          | [Rect][r] | True or False |
-| distance_to_rect()        | Gives the shortest distance between two rectangles | [Rect][r] | Float         |
+| corners_belong_to_edge()  | Tells if two points are the corners on the edge of the rectangle                                                                               | [Point][p], [Point][p] | True or False |
+| is_point_inside_rect()    | Tells if a point is inside the rectangle                                                                                                       | [Point][p]    | True or False     |
+| overlaps_with()           | Tells if the rectangle overlaps with an  other rectangle                                                                                       | [Rect][r]     | True or False     |
+| align_with_top_edge_of()  | Moves rectangle to the top edge of given rectangle                                                                                             | [Rect][r]     | self              |
+| align_with_left_edge_of() | Moves rectangle to the left edge of given rectangle                                                                                            | [Rect][r]     | self              |
+| overlaps_on_x_axis_with() | Tells if the rectangle overlaps with an other rectangle if they were both moved to the top of the screen  	                                   | [Rect][r]     | True or False     |
+| overlaps_on_y_axis_with() | Tells if the rectangle overlaps with an other rectangle if they were both moved to the left of the screen                                      | [Rect][r]     | True or False     |
+| distance_to_rect()        | Gives the shortest distance between two rectangles                                                                                             | [Rect][r]     | Float             |
 
 
 Point
@@ -133,8 +127,7 @@ Also keep in mind that some methods of a rectangle take points as an argument.
 | Method    | Description                           | Takes                         | Gives             |
 |-----------|---------------------------------------|-------------------------------|-------------------|
 | distance_to_point() | Gives the distance to a point | [Point][p]                  |     Float         |
-| faces_line()        | Tells if point is facing a
-                        line (a tupple of two points) | ([Point][p], [Point][p]) 	| True or False 	|
+| faces_line()        | Tells if point is facing a line (a tupple of two points)                                                                                  | ([Point][p], [Point][p])      | True or False     |
 
 
 
