@@ -27,7 +27,7 @@ is_point_inside_rect()
     |    . |
     |______|
     
-* Takes: a `Point` instance
+* Takes: a [`Point`](https://github.com/Pithikos/python-rectangles#point) instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -39,7 +39,7 @@ overlaps_with()
     |____|      |
          |______|
 
-* Takes: a `Rect` instance
+* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -53,7 +53,7 @@ overlaps_on_x_axis_with()
        |      |        the sreen.
        |______|
 
-* Takes: a `Rect` instance
+* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -65,7 +65,7 @@ overlaps_on_y_axis_with()
     |______|  |      | if they were to be smashed to the left 
               |______| of the screen.
 
-* Takes: a `Rect` instance
+* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -80,7 +80,7 @@ distance_to_rect()
               |      |
               |______|
 
-* Takes: a `Rect` instance
+* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
 * Gives: distance in float
               
 
