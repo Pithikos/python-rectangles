@@ -131,5 +131,5 @@ Also keep in mind that some methods of a rectangle take points as an argument.
 
 
 
-[r]: https://github.com/Pithikos/python-rectangles#rect
-[p]: https://github.com/Pithikos/python-rectangles#point
+[r]: #rect
+[p]: #point
