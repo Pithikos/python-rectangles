@@ -27,7 +27,7 @@ is_point_inside_rect()
     |    . |
     |______|
     
-* Takes: a [`Point`](https://github.com/Pithikos/python-rectangles#point) instance
+* Takes: a [`Point`][p] instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -39,7 +39,7 @@ overlaps_with()
     |____|      |
          |______|
 
-* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
+* Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -53,7 +53,7 @@ overlaps_on_x_axis_with()
        |      |        the sreen.
        |______|
 
-* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
+* Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -65,7 +65,7 @@ overlaps_on_y_axis_with()
     |______|  |      | if they were to be smashed to the left 
               |______| of the screen.
 
-* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
+* Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
          
 ------------------------------------------------------------------------
@@ -80,7 +80,7 @@ distance_to_rect()
               |      |
               |______|
 
-* Takes: a [`Rect`](https://github.com/Pithikos/python-rectangles#rect) instance
+* Takes: a [`Rect`][r] instance
 * Gives: distance in float
               
 
@@ -89,27 +89,33 @@ Rect
 
 A rectangle is the primary shape of this module. A rectangle is made out of four points (class Point is explained below). Iterating over a rectangle results into an iteration over its corners which essentially are points.
 
-| Property 	| Description         	| Type  	|
-|----------	|---------------------	|-------	|
-| l_top    	| Left top corner     	| Point 	|
-| r_top    	| Right top corner    	| Point 	|
-| l_bot    	| Left bottom corner  	| Point 	|
-| r_bot    	| Right bottom corner 	| Point 	|
-| center   	| Center of rectangle 	| Point 	|
-| width    	| Width of rectangle  	| Float 	|
-| height   	| Height of rectangle  	| Float 	|
+| Property 	| Description         	| Type          |
+|----------	|---------------------	|-------	    |
+| l_top    	| Left top corner     	| [Point][p] 	|
+| r_top    	| Right top corner    	| [Point][p] 	|
+| l_bot    	| Left bottom corner  	| [Point][p] 	|
+| r_bot    	| Right bottom corner 	| [Point][p] 	|
+| center   	| Center of rectangle 	| [Point][p] 	|
+| width    	| Width of rectangle  	| Float         |
+| height   	| Height of rectangle  	| Float         |
 
-| Method                    	| Description                                                                                               	| Takes        	| Gives         	|
-|---------------------------	|-----------------------------------------------------------------------------------------------------------	|--------------	|---------------	|
-| copy()                    	| Gives a new copy of a rectangle                                                                           	| None         	| Rect          	|
-| corners_belong_to_edge()  	| Tells if two points are the corners on the edge of the rectangle                                          	| Point, Point 	| True or False 	|
-| is_point_inside_rect()    	| Tells if a point is inside the rectangle                                                                  	| Point        	| True or False 	|
-| overlaps_with()           	| Tells if the rectangle overlaps with an other rectangle                                                   	| Rect         	| True or False 	|
-| align_with_top_edge_of()  	| Moves rectangle to the top edge of given rectangle                                                        	| Rect         	| self          	|
-| align_with_left_edge_of() 	| Moves rectangle to the left edge of given rectangle                                                       	| Rect         	| self          	|
-| overlaps_on_x_axis_with() 	| Tells if the rectangle overlaps with an other rectangle if they were both moved to the top of the screen  	| Rect         	| True or False 	|
-| overlaps_on_y_axis_with() 	| Tells if the rectangle overlaps with an other rectangle if they were both moved to the left of the screen 	| Rect         	| True or False 	|
-| distance_to_rect()        	| Gives the shortest distance between two rectangles                                                        	| Rect         	| Float         	|
+| Method                    | Description                      | Takes         | Gives             |
+|---------------------------|----------------------------------|---------------|-------------------|
+| copy()                    | Gives a new copy of a rectangle  | None          | [Rect][r]         |
+| corners_belong_to_edge()  | Tells if two points are the corners on the 
+                              edge of the rectangle            | [Point][p], [Point][p] | True or False |
+| is_point_inside_rect()    | Tells if a point is inside the rectangle          | [Point][p] | True or False |
+| overlaps_with()           | Tells if the rectangle overlaps with an other
+                              rectangle                                          | [Rect][r] | True or False |
+| align_with_top_edge_of()  | Moves rectangle to the top edge of given rectangle | [Rect][r] | self         |
+| align_with_left_edge_of() | Moves rectangle to the left edge of given rectangle | [Rect][r] | self         |
+| overlaps_on_x_axis_with() | Tells if the rectangle overlaps with an
+                              other rectangle if they were both moved to
+                              the top of the screen  	                         | [Rect][r] | True or False |
+| overlaps_on_y_axis_with() | Tells if the rectangle overlaps with 
+                              an other rectangle if they were both moved
+                              to the left of the screen                          | [Rect][r] | True or False |
+| distance_to_rect()        | Gives the shortest distance between two rectangles | [Rect][r] | Float         |
 
 
 Point
@@ -124,7 +130,13 @@ Also keep in mind that some methods of a rectangle take points as an argument.
 | y        	| Coordinates on y axis 	| Point 	|
 
 
-| Method                    	| Description                                                                                               	| Takes          	| Gives         	|
-|---------------------------	|-----------------------------------------------------------------------------------------------------------	|----------------	|---------------	|
-| distance_to_point()       	| Gives the distance to a point                                                                             	| Point          	| Float         	|
-| faces_line()              	| Tells if point is facing a line (a tupple of two points)                                                  	| (Point, Point) 	| True or False 	|
+| Method    | Description                           | Takes                         | Gives             |
+|-----------|---------------------------------------|-------------------------------|-------------------|
+| distance_to_point() | Gives the distance to a point | [Point][p]                  |     Float         |
+| faces_line()        | Tells if point is facing a
+                        line (a tupple of two points) | ([Point][p], [Point][p]) 	| True or False 	|
+
+
+
+[r]: https://github.com/Pithikos/python-rectangles#rect
+[p]: https://github.com/Pithikos/python-rectangles#point
