@@ -131,6 +131,10 @@ r4=Rect(150, 150, 50, 50) # doesn't overlap at all
 assert r1.overlaps_with(r2)
 assert r1.overlaps_with(r3)
 assert not r1.overlaps_with(r4)
+# (commutative property)
+assert r2.overlaps_with(r1)
+assert r3.overlaps_with(r1)
+assert not r4.overlaps_with(r1)
 
 # --- on x axis
 r1=Rect(0,   0, 50, 50)
@@ -140,6 +144,10 @@ r4=Rect(500, 0, 50, 50)
 assert r1.overlaps_on_x_axis_with(r2)
 assert r1.overlaps_on_x_axis_with(r3)
 assert not r1.overlaps_on_x_axis_with(r4)
+# (commutative property)
+assert r2.overlaps_on_x_axis_with(r1)
+assert r3.overlaps_on_x_axis_with(r1)
+assert not r4.overlaps_on_x_axis_with(r1)
 
 # --- y axis
 r1=Rect(0,     0, 50, 50)
@@ -151,6 +159,11 @@ assert r1.overlaps_on_y_axis_with(r2)
 assert r1.overlaps_on_y_axis_with(r3)
 assert r1.overlaps_on_y_axis_with(r4)
 assert not r1.overlaps_on_y_axis_with(r5)
+# (commutative property)
+assert r2.overlaps_on_y_axis_with(r1)
+assert r3.overlaps_on_y_axis_with(r1)
+assert r4.overlaps_on_y_axis_with(r1)
+assert not r5.overlaps_on_y_axis_with(r1)
 
 
 # --- Distance between rectangles
