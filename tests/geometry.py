@@ -1,7 +1,8 @@
-#
-# YOU NEED TO COPY THIS AT SAME DIR AS geometry.py TO RUN
-# (cp tests/geometry.py tests.py && python3 -B tests.py )
-#
+import sys, os
+if os.getcwd().endswith('python-rectangles'):
+    sys.path.insert(0, os.path.abspath('.'))
+elif os.getcwd().endswith('python-rectangles/tests'):
+    sys.path.insert(0, os.path.abspath('..'))
 from geometry import *
 import math
 
