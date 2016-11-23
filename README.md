@@ -26,22 +26,22 @@ is_point_inside_rect()
      ______
     |    . |
     |______|
-    
+
 * Takes: a [`Point`][p] instance
 * Gives: `True` or `False`
-         
+
 ------------------------------------------------------------------------
 
 overlaps_with()
 
      ______
-    |     _|____ 
+    |     _|____
     |____|      |
          |______|
 
 * Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
-         
+
 ------------------------------------------------------------------------
 
 overlaps_on_x_axis_with()
@@ -55,19 +55,19 @@ overlaps_on_x_axis_with()
 
 * Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
-         
+
 ------------------------------------------------------------------------
 
 overlaps_on_y_axis_with()
 
      ______
     |      |   ______  Sees if the rectangles touch each other
-    |______|  |      | if they were to be smashed to the left 
+    |______|  |      | if they were to be smashed to the left
               |______| of the screen.
 
 * Takes: a [`Rect`][r] instance
 * Gives: `True` or `False`
-         
+
 ------------------------------------------------------------------------
 
 distance_to_rect()
@@ -82,7 +82,7 @@ distance_to_rect()
 
 * Takes: a [`Rect`][r] instance
 * Gives: distance in float
-              
+
 
 Rect
 =================
@@ -102,6 +102,7 @@ A rectangle is the primary shape of this module. A rectangle is made out of four
 | Method                    | Description                      | Takes         | Gives             |
 |---------------------------|----------------------------------|---------------|-------------------|
 | copy()                    | Gives a new copy of a rectangle  | None          | [Rect][r]         |
+| iter_edges()              | Iterates over the four edges of the rectangle | None | [Point][p], [Point][p] |
 | corners_belong_to_edge()  | Tells if two points are the corners on the edge of the rectangle                                                                               | [Point][p], [Point][p] | True or False |
 | is_point_inside_rect()    | Tells if a point is inside the rectangle                                                                                                       | [Point][p]    | True or False     |
 | overlaps_with()           | Tells if the rectangle overlaps with an  other rectangle                                                                                       | [Rect][r]     | True or False     |

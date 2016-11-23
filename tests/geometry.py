@@ -6,6 +6,13 @@ elif os.getcwd().endswith('python-rectangles/tests'):
 from geometry import *
 import math
 
+
+# ---------------------------- Tools -----------------------------
+
+def Line(x1, y1, x2, y2):
+    return Point(x1, y1), Point(x2, y2)
+
+
 # ---------------------------- Test Points -----------------------------
 
 p1=Point(10, 20)
@@ -164,6 +171,42 @@ assert r2.overlaps_on_y_axis_with(r1)
 assert r3.overlaps_on_y_axis_with(r1)
 assert r4.overlaps_on_y_axis_with(r1)
 assert not r5.overlaps_on_y_axis_with(r1)
+
+
+# EDGE OVERLAPPING
+# edge overlap on x axis
+e1 = Line(0, 0, 100, 0)
+assert lines_overlap_on_x_axis(e1, Line(50, 0, 150, 0))
+assert lines_overlap_on_x_axis(Line(50, 0, 150, 0), e1)
+assert lines_overlap_on_x_axis(Line(50, 0, 60, 0), e1)
+assert lines_overlap_on_x_axis(e1, Line(50, 0, 60, 0))
+assert lines_overlap_on_x_axis(e1, Line(50, 100, 150, 200))
+assert lines_overlap_on_x_axis(Line(50, -190, 150, -200), e1)
+assert not lines_overlap_on_x_axis(e1, Line(-1, 0, -100, 0))
+# edge overlap on y axis
+e1 = Line(0, 0, 0, 100)
+assert lines_overlap_on_y_axis(e1, Line(0, 50, 0, 150))
+assert lines_overlap_on_y_axis(Line(0, 50, 0, 150), e1)
+assert lines_overlap_on_y_axis(e1, Line(0, 50, 0, 60))
+assert lines_overlap_on_y_axis(Line(0, 50, 0, 60), e1)
+assert not lines_overlap_on_y_axis(e1, Line(0, 101, 0, 110))
+assert not lines_overlap_on_y_axis(e1, Line(0, -1, 0, -10))
+# edge intersect detection
+e1 = Line(0, 0, 1, 1)
+assert lines_intersect(e1, Line(0, 0, 0, 1))
+assert lines_intersect(e1, Line(0, 0, 1, 0))
+assert lines_intersect(e1, Line(0, 0, 1, 1))
+assert lines_intersect(e1, Line(1, 1, 1, 1))
+assert lines_intersect(e1, Line(2, 2, 1, 1))
+assert not lines_intersect(e1, Line(1.1, 1.1, 1.2, 1.2))
+assert lines_intersect(e1, Line(1, 0, 0, 1))
+assert not lines_intersect(e1, Line(-0.1, -0.1, -1, 1))
+# more complex cases
+r1 = Rect(0, 5, 50, 50)
+r2 = Rect(35, 0, 1, 1)
+assert     r1.overlaps_on_x_axis_with(r2)
+assert not r1.overlaps_with(r2)
+assert round(r1.distance_to_rect(r2)) == 4.0
 
 
 # --- Distance between rectangles

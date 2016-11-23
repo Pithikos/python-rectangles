@@ -15,19 +15,19 @@ class Point():
 
 	x = None
 	y = None
-	
+
 	def __init__(self, x, y):
 		self.x, self.y = x, y
-	
+
 	def __str__(self):
 		return "%6.1f, %6.1f" % (self.x, self.y)
-		
+
 	def __eq__(self, obj):
 		return obj.x == self.x and obj.y == self.y
 
 	def distance_to_point(self, p):
 		return sqrt((self.x-p.x)**2+(self.y-p.y)**2)
-		
+
 	def faces_line(self, line):
 		return point_faces_edge(line, self)
 
@@ -78,6 +78,12 @@ class Rect():
 		yield self.r_bot
 		yield self.l_bot
 
+	def iter_edges(self):
+		yield self.l_top, self.r_top
+		yield self.r_top, self.r_bot
+		yield self.r_bot, self.l_bot
+		yield self.l_bot, self.l_top
+
 
 	# Gives back a copy of this rectangle
 	def copy(self):
@@ -106,7 +112,7 @@ class Rect():
 
 
     #  ______
-    # |     _|____ 
+    # |     _|____
     # |____|      |
     #      |______|
 	def overlaps_with(self, rect):
@@ -126,7 +132,7 @@ class Rect():
 		return self
 
 
-	#  ______                ______ 
+	#  ______                ______
     # |     _|____          |______|
     # |____|      |   -->   |      |
     #      |______|         |______|
@@ -162,32 +168,27 @@ class Rect():
     #          |      |
     #          |______|
 	def distance_to_rect(self, rect):
-		
+
 		# 1. see if they overlap
 		if self.overlaps_with(rect):
 			return 0
 
-		# 2. draw line between rectangles
+		# 2. draw a line between rectangles
 		line = (self.center, rect.center)
-		#print "line=%s %s" % (line[0], line[1])
 
 		# 3. find the two edges that intersect the line
-		p1, p2 = None, None
-		for corner in self:
-			if corner.faces_line(line):
-				if p1 is None:
-					p1=corner
-				elif self.corners_belong_to_edge(corner, p1):
-					p2=corner
-		edge1=(p1, p2)
-		p1, p2 = None, None
-		for corner in rect:
-			if corner.faces_line(line):
-				if p1 is None:
-					p1=corner
-				elif rect.corners_belong_to_edge(corner, p1):
-					p2=corner
-		edge2=(p1, p2)
+		edge1 = None
+		edge2 = None
+		for edge in self.iter_edges():
+			if lines_intersect(edge, line):
+				edge1 = edge
+				break
+		for edge in rect.iter_edges():
+			if lines_intersect(edge, line):
+				edge2 = edge
+				break
+		assert edge1
+		assert edge2
 
 		# 4. find shortest distance between these two edges
 		distances=[
@@ -238,6 +239,26 @@ def point_faces_edge(edge, point):
 	if ang1>pi/2 or ang2>pi/2:
 		return False
 	return True
+
+def lines_intersect(line1, line2):
+	return lines_overlap_on_x_axis(line1, line2) and lines_overlap_on_y_axis(line1, line2)
+
+def lines_overlap_on_x_axis(line1, line2):
+	x1, x2, = line1[0].x, line1[1].x
+	x3, x4, = line2[0].x, line2[1].x
+	e1_left, e1_right = min(x1, x2), max(x1, x2)
+	e2_left, e2_right = min(x3, x4), max(x3, x4)
+	return (e1_left >= e2_left and e1_left <= e2_right) or (e1_right >= e2_left and e1_right <= e2_right) or\
+	       (e2_left >= e1_left and e2_left <= e1_right) or (e2_right >= e1_left and e2_right <= e1_right)
+
+def lines_overlap_on_y_axis(line1, line2):
+	y1, y2, = line1[0].y, line1[1].y
+	y3, y4, = line2[0].y, line2[1].y
+	e1_top, e1_bot = min(y1, y2), max(y1, y2)
+	e2_top, e2_bot = min(y3, y4), max(y3, y4)
+	return (e1_top >= e2_top and e1_top <= e2_bot) or (e1_bot >= e2_top and e1_bot <= e2_bot) or\
+	       (e2_top >= e1_top and e2_top <= e1_bot) or (e2_bot >= e1_top and e2_bot <= e1_bot)
+
 
 # Gives distance if the point is facing edge, else False
 def distance_between_edge_and_point(edge, point): # edge is a tupple of points
