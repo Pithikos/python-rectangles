@@ -172,6 +172,10 @@ assert r3.overlaps_on_y_axis_with(r1)
 assert r4.overlaps_on_y_axis_with(r1)
 assert not r5.overlaps_on_y_axis_with(r1)
 
+# other cases
+rect1 = Rect(1, 0, 1, 1)
+rect2 = Rect(0, 0, 6, 1)
+assert rect1.overlaps_with(rect2)
 
 # EDGE OVERLAPPING
 # edge overlap on x axis

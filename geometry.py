@@ -119,6 +119,9 @@ class Rect():
 		for corner in rect:
 			if self.is_point_inside_rect(corner):
 				return True
+		for corner in self:
+			if rect.is_point_inside_rect(corner):
+				return True
 		return False
 
 
