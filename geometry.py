@@ -108,7 +108,7 @@ class Rect():
     #|______|
 	def is_point_inside_rect(self, point):
 		return (self.l_top.x <= point.x <= self.r_top.x and
-			self.l_top.y <= point.y <= self.l_bot.y)
+				self.l_top.y <= point.y <= self.l_bot.y)
 
 
     #  ______
